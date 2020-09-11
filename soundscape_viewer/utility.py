@@ -30,7 +30,7 @@ class gdrive_handle:
         upload_ = self.Gdrive.CreateFile({"parents": [{"kind": "drive#fileLink", "id": self.folder_id}], 'title': filename})
         upload_.SetContentFile(filename)
         upload_.Upload()
-        print('Successifully upload to Google drive')
+        print('Successfully upload to Google drive')
     
     def list_query(self, file_extension):
         location_cmd="title contains '"+file_extension+"' and '"+self.folder_id+"' in parents and trashed=false"
@@ -427,7 +427,7 @@ class spectrogram_detection:
   def save_txt(self, filename='Separation.txt',folder_id=[]):
       df = pd.DataFrame(self.output, columns = self.header) 
       df.to_csv(filename, sep='\t', index=False)
-      print('Successifully save to '+filename)
+      print('Successfully save to '+filename)
         
       if folder_id:
         #import Gdrive_upload
